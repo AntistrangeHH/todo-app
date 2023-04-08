@@ -23,28 +23,32 @@ A simple To-Do List API built using FastAPI, SQLAlchemy, and SQLite.
 
 1. Clone the repository
 
-```
+```bash
 git clone https://github.com/yourusername/todo_app.git
 cd todo_app
 ```
 
 2. Create a virtual environment and activate it
 - On Windows:
-  ```
+  ```bash
   venv\Scripts\activate
   ```
 - On macOS and Linux:
-  ```
+  ```bash
   source venv/bin/activate
   ```
 
 3. Install the dependencies
 
-```pip install -r requirements.txt```
+```bash
+pip install -r requirements.txt
+```
 
 4. Run the application
 
-```uvicorn app.main:app --reload```
+```bash
+uvicorn app.main:app --reload
+```
 
 The To-Do List API will be accessible at http://localhost:8000.
 
@@ -52,11 +56,15 @@ The To-Do List API will be accessible at http://localhost:8000.
 
 1. Build the Docker image
 
-`docker build -t todo_app .`
+```bash
+docker build -t todo_app .
+```
 
 2. Run the Docker container
 
-`docker run -d -p 8000:8000 todo_app`
+```bash
+docker run -d -p 8000:8000 todo_app
+```
 
 The To-Do List API will be accessible at http://localhost:8000.
 
@@ -77,10 +85,14 @@ Alembic is a lightweight database migration tool for SQLAlchemy. It helps manage
 ### Configuration
 1. To use Alembic, ensure you have the required packages installed:
 
-```pip install -r requirements.txt```
+```bash
+pip install -r requirements.txt
+```
 2. Initialize Alembic in your project:
 
-```alembic init alembic```
+```bash
+alembic init alembic
+```
 
 3. Update the `alembic.ini` file to point to your database URL
 4. Modify the `env.py` file inside the `alembic` folder to include the following:
@@ -91,20 +103,30 @@ target_metadata = Base.metadata
 ### Usage
 1. To create a new migration, run:
 
-```alembic revision -m "Your migration message"```
+```bash
+alembic revision -m "Your migration message"
+```
 2. Edit the generated migration file and add the necessary upgrade() and downgrade() operations
 3. Apply the migration to your database by running:
 
-```alembic upgrade head```
+```bash
+alembic upgrade head
+```
 4. If you need to undo the latest migration, run:
 
-```alembic downgrade -1```
+```bash
+alembic downgrade -1
+```
 5. To view the migration history, run:
 
-```alembic history```
+```bash
+alembic history
+```
 6. To check the current migration version, run:
 
-```alembic current```
+```bash
+alembic current
+```
 
 For more information about Alembic and its features, visit the official documentation.
 This version includes a section on how to configure and use Alembic for database migrations.
