@@ -27,7 +27,8 @@ alembic.ini
 alembic/
 
 #DB
-all/todos/db
+app/todos.db
+todos.db
 
 # vim temporary files
 *~
