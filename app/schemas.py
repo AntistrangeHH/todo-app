@@ -1,9 +1,30 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr
+
+
+class User(BaseModel):
+    username: str
+    email: EmailStr
+
+    class Config:
+        orm_mode = True
+
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+
+class TokenData(BaseModel):
+    username: str
+
+
+class UserInDB(User):
+    hashed_password: str
 
 
 class UserCreate(BaseModel):
     username: str
-    email: str
+    email: EmailStr
     password: str
 
     class Config:
